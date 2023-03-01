@@ -14,6 +14,28 @@ public class Car {
     private int oilChangeMileage;
     static final  int OIL_MILEAGE_INCREMENT = 5000;
     
+    //Default Constructor
+    public Car(){
+        make = "N/A";
+        model = "N/A";
+    }
+
+    public Car(String aMake, String aModel){
+        make = aMake;
+        model = aModel;
+        mileage = 2;
+        year = 2023;
+        setOilChangeMileage();
+
+    }
+
+    public Car(int aYear){
+        make = "Ford";
+        model = "Broncos";
+        mileage = 0;
+        year = aYear;
+        setOilChangeMileage();
+    }
 
     //setters methods
     public void setMake(String aMake){
@@ -51,6 +73,11 @@ public class Car {
     //Working method that calculates the mileage for next oil change
     private void setOilChangeMileage(){
         oilChangeMileage = mileage + OIL_MILEAGE_INCREMENT;
+    }
+
+
+    public String toString(){
+        return "Make: " + make + " Model: " + model +  "Year: " + year + " Mileage to next Oil change: " + oilChangeMileage;
     }
 
 
